@@ -11,9 +11,11 @@
         android:background="@android:color/holo_blue_light"
         android:padding="6dp">
         <SurfaceView
+            android:id="@+id/surfaceView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <TextView
+            android:id="@+id/scoreTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_0"
@@ -35,6 +37,42 @@
         android:layout_alignParentBottom="true"
         android:id="@+id/bottomBar">
 
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/topBtn"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@color/lavender"
+            android:src="@drawable/arrow_up"
+            android:contentDescription= "@string/move_up" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/leftBtn"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:background="@color/lavender"
+                android:src="@drawable/arrow_left"
+                android:contentDescription="@string/move_left" />
+            <ImageButton
+                android:id="@+id/rightBtn"
+                android:layout_marginStart="80dp"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:background="@color/lavender"
+                android:src="@drawable/arrow_right"
+                android:contentDescription="@string/move_right" />
 
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/bottomBtn"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:background="@color/lavender"
+            android:src="@drawable/arrow_down"
+            android:contentDescription="@string/move_down" />
+
+    </LinearLayout>
 </RelativeLayout>

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">SnakeGame</string>
     <string name="_0">0</string>
+    <string name="move_down">Move down</string>
+    <string name="move_right">Move right</string>
+    <string name="move_left">Move left</string>
+    <string name="move_up">Move up</string>
 </resources>
