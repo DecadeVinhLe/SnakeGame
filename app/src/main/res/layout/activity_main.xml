@@ -8,12 +8,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_blue_light"
+        android:background="@android:color/holo_red_light"
         android:padding="6dp">
+
         <SurfaceView
             android:id="@+id/surfaceView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
+
         <TextView
             android:id="@+id/scoreTV"
             android:layout_width="wrap_content"
@@ -21,7 +23,7 @@
             android:text="@string/_0"
             android:textColor="@color/white"
             android:textSize="25sp"
-            android:fontFamily="casual"
+            android:fontFamily="sans-serif-condensed"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"/>
@@ -53,7 +55,7 @@
                 android:id="@+id/leftBtn"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
-                android:background="@color/lavender"
+                android:background="@color/Blue"
                 android:src="@drawable/arrow_left"
                 android:contentDescription="@string/move_left" />
             <ImageButton
@@ -61,7 +63,7 @@
                 android:layout_marginStart="80dp"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
-                android:background="@color/lavender"
+                android:background="@color/Blue"
                 android:src="@drawable/arrow_right"
                 android:contentDescription="@string/move_right" />
 
