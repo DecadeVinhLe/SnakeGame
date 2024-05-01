@@ -162,13 +162,16 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
         movingPosition = "right";
 
         int startPositionX = (pointSize) * defaultTalePoints;
+        SnakePoints snakePoints = new SnakePoints(startPositionX,pointSize);
+        snakePointList.add(snakePoints);
           // adding points to snake's tale
         for (int i = 0; i < defaultTalePoints; i++){
-            SnakePoints snakePoints = new SnakePoints(startPositionX,pointSize);
-            snakePointList.add(snakePoints);
-
             // increasing value for next point as snake's tale
             startPositionX = startPositionX - (pointSize * 2);
+            snakePoints = new SnakePoints(startPositionX,pointSize);
+            snakePointList.add(snakePoints);
+
+
         }
             // add random point on the screen that can eaten by snake
           addPoint();
@@ -205,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
                 int headPositionX = snakePointList.get(0).getPositionX();
                 int headPositionY = snakePointList.get(0).getPositionY();
                 // check if snake eaten
-                if (headPositionX == positionX && positionY == headPositionY){
+                if (Math.abs(headPositionX - positionX) <= pointSize && Math.abs(headPositionY - positionY) <= pointSize){
                    // grow snake after eaten point
                     growSnake();
                     // add another random point on the screen
@@ -226,7 +229,7 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
 
                     case "top":
                         //move snake head up
-                        snakePointList.get(0).setPositionX(headPositionX );
+                        snakePointList.get(0).setPositionX(headPositionX);
                         snakePointList.get(0).setPositionY(headPositionY + (pointSize * 2));
                         break;
 
@@ -298,9 +301,14 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
 
     private void growSnake(){
         // create new snake point
-        SnakePoints snakePoints = new SnakePoints(0,0);
+        SnakePoints lastPoint = snakePointList.get(snakePointList.size() - 1);
         //add point to snake's tale
-        snakePointList.add(snakePoints);
+        int newX = lastPoint.getPositionX();
+        int newY = lastPoint.getPositionY();
+
+        // Add new point to snake's tail
+        SnakePoints newPoint = new SnakePoints(newX, newY);
+        snakePointList.add(newPoint);
 
         //increase score
         score++;
